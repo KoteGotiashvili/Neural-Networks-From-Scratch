@@ -49,58 +49,58 @@ learning and model flexibility. It is implemented from scratch using Numpy on th
 **ReLU** - is widely used for its simplicity, computational efficiency, and effectiveness in handling vanishing gradients(Gradients become extremely small) in deep networks. [ReLU From Scratch](activation/ReLU.py)
 
 ## Calculating Network Error with Loss
-**SOON** Dive into error calculation methods, focusing on categorical cross-entropy loss and accuracy calculations.
+**SOON 🔜  ** Dive into error calculation methods, focusing on categorical cross-entropy loss and accuracy calculations.
 
 ## Introducing Optimization
-**SOON** Introduction to optimization techniques and their role in training neural networks.
+**SOON 🔜  **Introduction to optimization techniques and their role in training neural networks.
 
 ## Derivatives
-**SOON** Comprehensive guide on derivatives, including numerical and analytical derivatives, essential for understanding gradient calculations.
+**SOON 🔜  **Comprehensive guide on derivatives, including numerical and analytical derivatives, essential for understanding gradient calculations.
 
 ## Gradients, Partial Derivatives, and the Chain Rule
-**SOON** Detailed explanation of gradients, partial derivatives, and the chain rule, crucial for backpropagation.
+**SOON 🔜  **Detailed explanation of gradients, partial derivatives, and the chain rule, crucial for backpropagation.
 
 ## Backpropagation
-**SOON** Implement backpropagation with code examples, focusing on categorical cross-entropy loss and softmax activation derivative.
+**SOON 🔜  ** Implement backpropagation with code examples, focusing on categorical cross-entropy loss and softmax activation derivative.
 
 ## Optimizers
-**SOON** Explore different optimization algorithms like SGD, AdaGrad, RMSProp, and Adam.
+**SOON 🔜  ** Explore different optimization algorithms like SGD, AdaGrad, RMSProp, and Adam.
 
 ## Testing with Out-of-Sample Data
-**SOON** Techniques for testing neural network models with out-of-sample data to evaluate their performance.
+**SOON 🔜  **Techniques for testing neural network models with out-of-sample data to evaluate their performance.
 
 ## Validation Data
-**SOON** Methods for using validation data during model training to prevent overfitting.
+**SOON 🔜  ** Methods for using validation data during model training to prevent overfitting.
 
 ## Training Dataset
-**SOON** Guidelines for preparing and using training datasets effectively.
+**SOON 🔜  **Guidelines for preparing and using training datasets effectively.
 
 ## L1 and L2 Regularization
-**SOON** Implement regularization techniques to improve model generalization.
+**SOON 🔜  **Implement regularization techniques to improve model generalization.
 
 ## Dropout
-**SOON** Learn about dropout techniques to prevent overfitting in neural networks.
+**SOON 🔜  ** Learn about dropout techniques to prevent overfitting in neural networks.
 
 ## Binary Logistic Regression
-**SOON** Detailed guide to implementing binary logistic regression and binary cross-entropy loss.
+**SOON 🔜  ** Detailed guide to implementing binary logistic regression and binary cross-entropy loss.
 
 ## Regression
-**SOON** Explore regression techniques, including mean squared error and mean absolute error, with code examples.
+**SOON 🔜  ** Explore regression techniques, including mean squared error and mean absolute error, with code examples.
 
 ## Model Object
-**SOON** Creating and using model objects for easier neural network management.
+**SOON 🔜  **Creating and using model objects for easier neural network management.
 
 ## A Real Dataset
-**SOON** Practical guide to working with real datasets, including data preparation, loading, preprocessing, and training.
+**SOON 🔜  ** Practical guide to working with real datasets, including data preparation, loading, preprocessing, and training.
 
 ## Model Evaluation
-**SOON** Methods for evaluating neural network models to ensure they perform well on unseen data.
+**SOON 🔜  ** Methods for evaluating neural network models to ensure they perform well on unseen data.
 
 ## Saving and Loading Models and Their Parameters
-**SOON** Techniques for saving and loading models and their parameters for reuse.
+**SOON 🔜  ** Techniques for saving and loading models and their parameters for reuse.
 
 ## Prediction / Inference
-**SOON** Guidelines for making predictions and performing inference with trained neural network models.
+**SOON 🔜  ** Guidelines for making predictions and performing inference with trained neural network models.
 
 
 
