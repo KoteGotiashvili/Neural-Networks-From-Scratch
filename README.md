@@ -48,6 +48,7 @@ learning and model flexibility. It is implemented from scratch using Numpy on th
 ## Activation Functions
 **ReLU** - is widely used for its simplicity, computational efficiency, and effectiveness in handling vanishing gradients(Gradients become extremely small) in deep networks. [ReLU From Scratch](activation/ReLU.py)
 
+**SoftMax** - is essential for multi-class classification problems, converting logits(numbers) into probabilities, making it easier to interpret model outputs and compare class scores. [SoftMax From Scratch](activation/SoftMax.py)
 ## Calculating Network Error with Loss
 **SOON 🔜  ** Dive into error calculation methods, focusing on categorical cross-entropy loss and accuracy calculations.
 
