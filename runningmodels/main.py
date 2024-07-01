@@ -3,6 +3,7 @@ from nnfs.datasets import spiral_data
 from models.Dense import Dense
 from activation.ReLU import RelU
 from activation.SoftMax import SoftMax
+from loss.CategoricalCrossEntropy import CategoricalCrossEntropy
 X, y = spiral_data(samples=100,
                    classes=3)
 # Create Dense Layer for ReLU
@@ -16,6 +17,9 @@ activation1=RelU()
 
 #Initialize SoftMa
 activation2=SoftMax()
+
+#loss
+loss_function=CategoricalCrossEntropy()
 
 # make forward pass through training spiral data
 dense1.forward(X)
@@ -34,4 +38,9 @@ print(activation1.output[:5])
 
 # Print Softmax Results, After That developer in many cases apply ARGMAX(to get most probable output, just choose max prob val)
 print(activation2.output[:5])
+
+#loss
+loss=loss_function.calculate(activation2.output, y)
+
+print("Loss: ", loss)
 
