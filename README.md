@@ -50,8 +50,8 @@ learning and model flexibility. It is implemented from scratch using Numpy on th
 
 **SoftMax** - is essential for multi-class classification problems, converting logits(numbers) into probabilities, making it easier to interpret model outputs and compare class scores. [SoftMax From Scratch](activation/SoftMax.py)
 ## Calculating Network Error with Loss
-**SOON 🔜  ** Dive into error calculation methods, focusing on categorical cross-entropy loss and accuracy calculations.
-
+**Categorical Cross-Entropy** -Categorical cross-entropy loss is widely used in classification tasks, it measures the difference between true and predicted probabilities.It is beneficial for multi-class problems. Lower loss indicates higher confidence in correct predictions (e.g., 0.99 probability yields low loss, approaching zero).
+[Categorical Cross-Entropy From Scratch](loss/CategoricalCrossEntropy.py)
 ## Introducing Optimization
 **SOON 🔜  **Introduction to optimization techniques and their role in training neural networks.
 
