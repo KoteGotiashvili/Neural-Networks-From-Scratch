@@ -59,7 +59,7 @@ but experiments show this is not effective. Instead,
 we use calculus to optimize these adjustments. 😊 
 
 You can see the results after using the random approach
-![Alt text](images/randomapproach.png)
+![train neural net using random approach](images/randomapproach.png)
 
 ## Derivatives
 The random approach does not yield good results. 
@@ -73,7 +73,23 @@ we'll **Backpropagate** it using **Chain Rule**.
 More About Calculus: https://en.wikipedia.org/wiki/Calculus
 
 ## Gradients, Partial Derivatives, and the Chain Rule
-**SOON 🔜  **Detailed explanation of gradients, partial derivatives, and the chain rule, crucial for backpropagation.
+**Gradient**: The gradient is a vector consisting of the partial derivatives with respect to each of the inputs.
+
+**Partial Derivatives**: Measures how much impact a single input has on a function's output
+
+If the function is following ![gradient](images/function.png)
+
+Then Partial Derivatives and gradient will be following
+![gradient](images/gradient.png) 
+
+**Chain Rule**: The chain rule is used in neural networks during backpropagation 
+to compute gradients of the loss function. Loss is a big function
+or a chain of functions of multiple inputs.
+
+For instance, if we have two function z=f(x) and y=g(z)
+We can represent this equation as y=g(f(x)), As you can see there 
+is function inside the function
+and as calculus says derivative of y will be y'=g(f(x))' * f(x)' same will be for multi-variable.
 
 ## Backpropagation
 **SOON 🔜  ** Implement backpropagation with code examples, focusing on categorical cross-entropy loss and softmax activation derivative.
