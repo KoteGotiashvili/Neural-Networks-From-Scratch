@@ -53,10 +53,24 @@ learning and model flexibility. It is implemented from scratch using Numpy on th
 **Categorical Cross-Entropy** -Categorical cross-entropy loss is widely used in classification tasks, it measures the difference between true and predicted probabilities.It is beneficial for multi-class problems. Lower loss indicates higher confidence in correct predictions (e.g., 0.99 probability yields low loss, approaching zero).
 [Categorical Cross-Entropy From Scratch](loss/CategoricalCrossEntropy.py)
 ## Introducing Optimization
-**SOON 🔜  **Introduction to optimization techniques and their role in training neural networks.
+The next step is determining how to adjust the weights and biases 
+to decrease the loss. Initially, one might think of changing them randomly, 
+but experiments show this is not effective. Instead, 
+we use calculus to optimize these adjustments. 😊 
+
+You can see the results after using the random approach
+![Alt text](images/randomapproach.png)
 
 ## Derivatives
-**SOON 🔜  **Comprehensive guide on derivatives, including numerical and analytical derivatives, essential for understanding gradient calculations.
+The random approach does not yield good results. 
+Instead, we use calculus, particularly derivatives,
+to measure changes in variables. This method involves using the
+slopes of functions to optimize our neural networks. Basically we calculate
+how much each singular weight and bias change the loss value. For that we are going to
+use **Gradient Descent** which is result of the calculation of the partial derivatives and then
+we'll **Backpropagate** it using **Chain Rule**.
+
+More About Calculus: https://en.wikipedia.org/wiki/Calculus
 
 ## Gradients, Partial Derivatives, and the Chain Rule
 **SOON 🔜  **Detailed explanation of gradients, partial derivatives, and the chain rule, crucial for backpropagation.
