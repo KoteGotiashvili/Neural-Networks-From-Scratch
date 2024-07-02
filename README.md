@@ -89,7 +89,7 @@ or a chain of functions of multiple inputs.
 For instance, if we have two function z=f(x) and y=g(z)
 We can represent this equation as y=g(f(x)), As you can see there 
 is function inside the function
-and as calculus says derivative of y will be y'=g(f(x))' * f(x)' same will be for multi-variable.
+and as calculus says derivative of y will be y'=g(f(x))' * f(x)'
 
 ## Backpropagation
 **SOON 🔜  ** Implement backpropagation with code examples, focusing on categorical cross-entropy loss and softmax activation derivative.
