@@ -92,8 +92,17 @@ is function inside the function
 and as calculus says derivative of y will be y'=g(f(x))' * f(x)'
 
 ## Backpropagation
-**SOON 🔜  ** Implement backpropagation with code examples, focusing on categorical cross-entropy loss and softmax activation derivative.
+Backpropagation is a key algorithm in training neural networks, 
+enabling weight adjustment to minimize error. It measures the gradient of 
+the loss function with respect to each weight by propagating errors backward 
+through the network. Essential for gradient descent optimization, it enhances 
+model accuracy. 
 
+Step 1 -> Compute Gradient of Loss Function
+
+Step 2 -> Backpropagate the Gradient
+
+step 3 -> Adjust Weights
 ## Optimizers
 **SOON 🔜  ** Explore different optimization algorithms like SGD, AdaGrad, RMSProp, and Adam.
 
