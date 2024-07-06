@@ -103,6 +103,18 @@ Step 1 -> Compute Gradient of Loss Function
 Step 2 -> Backpropagate the Gradient
 
 step 3 -> Adjust Weights
+
+**Categorical Cross-Entropy Loss Derivative:**
+
+Full solution ![gradient](images/entropy.png)
+Code On there: [CategoricalCrossEntropy](loss/CategoricalCrossEntropy.py)
+
+**Softmax Derivative:** 
+
+Full Solution:
+![gradient](images/softmax.png)
+Code On there: [SoftMax](activation/SoftMax.py)
+
 ## Optimizers
 **SOON 🔜  ** Explore different optimization algorithms like SGD, AdaGrad, RMSProp, and Adam.
 
