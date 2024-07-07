@@ -21,4 +21,23 @@ class SoftMax:
                                                      keepdims=True)
         self.output=probabilities
 
+    def backward(self, dvalues):
+        """
+        The backward pass computes the gradient of the loss with respect to the input values
+        """
 
+        self.dinputs = np.empty_like(dvalues)
+
+        # Enumerate outputs and gradients
+
+        for index, (single_output, single_dvalues) in enumerate(zip(self.output, dvalues)):
+
+            single_output = single_output.reshape(-1,1)
+
+            #calculate jacobian matrix of the output
+
+            jacobian_matrix = np.diagflat(single_output) - np.dot(single_output, single_output.T)
+
+            # multiply the jacobian matrix by the gradient
+
+            self.dinputs[index] = np.dot(jacobian_matrix, single_dvalues)
