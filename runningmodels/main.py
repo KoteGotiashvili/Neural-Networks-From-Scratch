@@ -5,6 +5,7 @@ from activation.ReLU import RelU
 from activation.SoftMax import SoftMax
 from loss.CategoricalCrossEntropy import CategoricalCrossEntropy
 from softmaxandentropy.Activation_Softmax_Loss_CategoricalCrossEntropy import Activation_Softmax_Loss_CategoricalCrossentropy
+from optimizers.SGD import SGD
 X, y = spiral_data(samples=100,
                    classes=3)
 # Create Dense Layer for ReLU
@@ -21,6 +22,9 @@ activation2=SoftMax()
 
 #loss
 loss_function=CategoricalCrossEntropy()
+
+# Initialize SGD optimizer
+optimizer = SGD(lr=0.1)
 
 # make forward pass through training spiral data
 dense1.forward(X)
@@ -70,6 +74,11 @@ loss_activation.backward(loss_activation.output, y)
 dense2.backward(loss_activation.dinputs)
 activation1.backward(dense2.dinputs)
 dense1.backward(activation1.dinputs)
+
+# Update weights and biases
+optimizer.update_params(dense1)
+optimizer.update_params(dense2)
+
 
 # Print gradients
 print("Print gradients")
