@@ -4,6 +4,7 @@ from models.Dense import Dense
 from activation.ReLU import RelU
 from activation.SoftMax import SoftMax
 from loss.CategoricalCrossEntropy import CategoricalCrossEntropy
+from softmaxandentropy.Activation_Softmax_Loss_CategoricalCrossEntropy import Activation_Softmax_Loss_CategoricalCrossentropy
 X, y = spiral_data(samples=100,
                    classes=3)
 # Create Dense Layer for ReLU
@@ -34,13 +35,53 @@ dense2.forward(activation1.output)
 activation2.forward(dense2.output)
 
 # pirnt ReLU results
+print("ReLU results")
 print(activation1.output[:5])
 
 # Print Softmax Results, After That developer in many cases apply ARGMAX(to get most probable output, just choose max prob val)
+print("Softmax Results")
 print(activation2.output[:5])
 
 #loss
-loss=loss_function.calculate(activation2.output, y)
+loss_activation = Activation_Softmax_Loss_CategoricalCrossentropy()
 
-print("Loss: ", loss)
+#perform a forward pass through the activation/loss function
+#takes the output of secod dense here and returns loss
+loss = loss_activation.forward(dense2.output, y)
+
+# output of few samples
+print("output of loss_activation")
+print(loss_activation.output[:5])
+
+#loss
+print("loss: ", loss)
+
+#calculate accuracy from output of activation 2 and targets
+predictions = np.argmax(loss_activation.output, axis=1)
+if len(y.shape) == 2:
+    y=np.argmax(y, axis=1)
+accuracy = np.mean(predictions == y)
+
+#print accuracy
+print('acc: ', accuracy)
+
+#Backward pass
+loss_activation.backward(loss_activation.output, y)
+dense2.backward(loss_activation.dinputs)
+activation1.backward(dense2.dinputs)
+dense1.backward(activation1.dinputs)
+
+# Print gradients
+print("Print gradients")
+print(dense1.dweights)
+print()
+print(dense1.dbiases)
+print()
+print(dense2.dweights)
+print()
+print(dense2.dbiases)
+
+
+
+
 
