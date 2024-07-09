@@ -121,6 +121,13 @@ Code On there: [SoftMax](activation/SoftMax.py)
 this information to adjust weights and biases to decrease the loss. I'm going to implement
 SGD where after each step/epoch gradient is changed by small portion in order to decrease loss.
 
+**Learning Rate:** Lr is hyperparameter if it is too low small updates to
+derivatives cause the model to stuck in a local minimum, If it is high 
+loss will start jumping, and results weired loss for each epoch, 
+No more words just look at the image (:
+
+![Learning Rate](images/leraningrate.png)
+
 
 ## Testing with Out-of-Sample Data
 **SOON 🔜  **Techniques for testing neural network models with out-of-sample data to evaluate their performance.
