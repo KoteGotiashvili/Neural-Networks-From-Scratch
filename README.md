@@ -116,7 +116,11 @@ Full Solution:
 Code On there: [SoftMax](activation/SoftMax.py)
 
 ## Optimizers
-**SOON 🔜  ** Explore different optimization algorithms like SGD, AdaGrad, RMSProp, and Adam.
+
+**Stochastic Gradient Descent (SGD):** Once we have calculated gradients we can use 
+this information to adjust weights and biases to decrease the loss. I'm going to implement
+SGD where after each step/epoch gradient is changed by small portion in order to decrease loss.
+
 
 ## Testing with Out-of-Sample Data
 **SOON 🔜  **Techniques for testing neural network models with out-of-sample data to evaluate their performance.
