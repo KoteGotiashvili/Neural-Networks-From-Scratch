@@ -137,6 +137,11 @@ This is "formula" for that: ![LRDecay](images/lrdecay.png)
 step increase causes learning rate decrease, lets visualize it for 20 epoch
 ![after20epoch](images/20stepdecay.png)
 
+This approach is fair but only follows gradient updates without any additional 
+logic that could potentially help the model find the global minimum to the loss function. 
+One option for improving SGD is to introduce **MOMENTUM**
+
+
 ## Testing with Out-of-Sample Data
 **SOON 🔜  **Techniques for testing neural network models with out-of-sample data to evaluate their performance.
 
