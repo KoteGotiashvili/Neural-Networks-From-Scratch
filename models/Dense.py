@@ -8,8 +8,10 @@ class Dense:
         self.biases = np.zeros((1, neuron))
         self.output = 0
 
-    def forward(self, input):
-        self.output = np.dot(input, self.weights) + self.biases
+    def forward(self, inputs):
+
+        self.inputs = inputs
+        self.output = np.dot(inputs, self.weights) + self.biases
 
     def backward(self, dvalues):
 
@@ -29,7 +31,7 @@ class Dense:
         """
         # Calculate gradient of weights and biases
 
-        self.dweights = np.dot(self.input.T, dvalues)
+        self.dweights = np.dot(self.inputs.T, dvalues)
         self.dbiases = np.sum(dvalues, axis=0, keepdims=True)
 
         # Calculate gradient of the input
