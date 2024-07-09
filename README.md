@@ -141,6 +141,11 @@ This approach is fair but only follows gradient updates without any additional
 logic that could potentially help the model find the global minimum to the loss function. 
 One option for improving SGD is to introduce **MOMENTUM**
 
+**Momentum:** Creates a rolling average of gradients over some number 
+of updates and uses this average with the unique gradient at each step.
+Momentum may still point toward the global gradient descent direction. The 
+update contains a portion of the gradient from preceding steps as our momentum
+and only a portion of the current gradient.
 
 ## Testing with Out-of-Sample Data
 **SOON 🔜  **Techniques for testing neural network models with out-of-sample data to evaluate their performance.
