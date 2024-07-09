@@ -129,6 +129,9 @@ No more words just look at the image (:
 
 ![Learning Rate](images/leraningrate.png)
 
+In most cases we want to start with a larger learning rate and decrease the learning rate over time/steps/epochs.
+Commonly used solution explore various learning rate during training is to implement **Learning Rate Decay**
+
 
 ## Testing with Out-of-Sample Data
 **SOON 🔜  **Techniques for testing neural network models with out-of-sample data to evaluate their performance.
