@@ -120,6 +120,7 @@ Code On there: [SoftMax](activation/SoftMax.py)
 **Stochastic Gradient Descent (SGD):** Once we have calculated gradients we can use 
 this information to adjust weights and biases to decrease the loss. I'm going to implement
 SGD where after each step/epoch gradient is changed by small portion in order to decrease loss.
+[SGD](optimizers/SGD.py)
 
 **Learning Rate:** Lr is hyperparameter if it is too low small updates to
 derivatives cause the model to stuck in a local minimum, If it is high 
