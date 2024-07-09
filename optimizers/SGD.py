@@ -1,6 +1,8 @@
+import numpy as np
+
 
 class SGD:
-    def __init__(self, lr=1, decay=0.):
+    def __init__(self, lr=1, decay=0., momentum=0.):
         """
         Args:
         lr (float): The initial learning rate.
@@ -12,6 +14,7 @@ class SGD:
         self.current_lr=lr
         self.decay = decay
         self.iterations = 0
+        self.momentum = momentum
 
 
     def pre_update_params(self):
@@ -35,9 +38,31 @@ class SGD:
         Returns:
         None
         """
-        # multiply learning rate by derivatives of weights and biases
-        layer.weights += -self.current_lr * layer.dweights
-        layer.biases += -self.current_lr * layer.dbiases
+        if self.momentum:
+
+            if not hasattr(layer,'weight_momentums'):
+                # if layer does not contain momentum arrays, create them filled with zeros
+                layer.weight_momentums = np.zeros_like(layer.weights)
+                # same for bias
+                layer.bias_momentums = np.zeros_like(layer.biases)
+
+            weight_updates = self.momentum * layer.weight_momentums - self.current_lr * layer.dweights
+            layer.weight_momentums = weight_updates
+
+            #bias update
+            bias_updates = self.momentum * layer.bias_momentums - self.current_lr * layer.dbiases
+            layer.bias_momentums = bias_updates
+
+        else:
+            weight_updates = -self.current_lr * layer.dweights
+            bias_updates = -self.current_lr * layer.dbiases
+
+        # update weights and biases
+        layer.weights += weight_updates
+        layer.biases += bias_updates
+
+
+
 
     def post_update_params(self):
         """
