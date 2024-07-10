@@ -147,6 +147,19 @@ Momentum may still point toward the global gradient descent direction. The
 update contains a portion of the gradient from preceding steps as our momentum
 and only a portion of the current gradient.
 
+**AdaGrad:** AdaGrad is short for adaptive gradient. Main idea is to
+normalize updates made to the features. During the training process, some weights
+can rise significantly, while others tend to not change by much. AdaGrad
+provides a way to normalize parameter updates by keeping a history of previous updates
+**The bigger the sum of the update is, in either direction, the smaller updates are made further in training.**
+Which lets less-frequently updated parameters to keep-up with changes, utilizing more neurons for training.
+
+This Is AdaGrad In Nutshell:
+![after20epoch](images/adagrad.png)
+**Cache:** holds history of squared gradients.
+**parm_updates:** is function of the learning rate multiplied by the gradient and then 
+divided by the sqrt of root of the cache plus some **epsilon**(epsilon value is usually a small such as 1e-8, avoid division by zero)
+
 ## Testing with Out-of-Sample Data
 **SOON 🔜  **Techniques for testing neural network models with out-of-sample data to evaluate their performance.
 
