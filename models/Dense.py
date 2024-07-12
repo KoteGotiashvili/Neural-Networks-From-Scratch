@@ -32,6 +32,7 @@ class Dense:
         # Calculate gradient of weights and biases
 
         self.dweights = np.dot(self.inputs.T, dvalues)
+
         self.dbiases = np.sum(dvalues, axis=0, keepdims=True)
 
         # Calculate gradient of the input
