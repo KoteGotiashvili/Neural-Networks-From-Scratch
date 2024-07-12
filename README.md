@@ -160,6 +160,11 @@ This Is AdaGrad In Nutshell:
 **parm_updates:** is function of the learning rate multiplied by the gradient and then 
 divided by the sqrt of root of the cache plus some **epsilon**(epsilon value is usually a small such as 1e-8, avoid division by zero)
 
+AdaGrad(Adaptive Gradient) From Scratch:[AdaGrad](optimizers/AdaGrad.py)
+
+
+
+
 ## Testing with Out-of-Sample Data
 **SOON 🔜  **Techniques for testing neural network models with out-of-sample data to evaluate their performance.
 
