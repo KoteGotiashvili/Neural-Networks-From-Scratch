@@ -173,6 +173,10 @@ In this way learning rate changes are smoother. **rho(hyperparameter):** is the 
 **Adam:** Short for **Adaptive Momentum** is currently most widely-used optimizer and is built
 atop RMSProp, with the momentum concept from SGD added back in.Adam optimizer works well with large 
 datasets and sparse data, helping models learn faster and more reliably. 
+
+**It is usually good to try Adam optimizer first and then others. Choosing optimizer
+depends on problem type but if problem is too complex just try different ones
+and choose the best (:**
 ## Testing with Out-of-Sample Data
 **SOON 🔜  **Techniques for testing neural network models with out-of-sample data to evaluate their performance.
 
