@@ -163,7 +163,11 @@ divided by the sqrt of root of the cache plus some **epsilon**(epsilon value is 
 AdaGrad(Adaptive Gradient) From Scratch:[AdaGrad](optimizers/AdaGrad.py)
 
 
+**RMSProp:** Full name is **Root Mean Square Propagation**. It is similar to AdaGrad but calculation
+happens in different way, where AdaGrad calculates cache as squared gradients, RMSProp have following approach:
+![rmsprop](images/rmsprop.png)
 
+In this way learning rate changes are smoother. **rho(hyperparameter):** is the cache memory decay rate. 
 
 ## Testing with Out-of-Sample Data
 **SOON 🔜  **Techniques for testing neural network models with out-of-sample data to evaluate their performance.
