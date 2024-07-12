@@ -169,6 +169,10 @@ happens in different way, where AdaGrad calculates cache as squared gradients, R
 
 In this way learning rate changes are smoother. **rho(hyperparameter):** is the cache memory decay rate. 
 
+
+**Adam:** Short for **Adaptive Momentum** is currently most widely-used optimizer and is built
+atop RMSProp, with the momentum concept from SGD added back in.Adam optimizer works well with large 
+datasets and sparse data, helping models learn faster and more reliably. 
 ## Testing with Out-of-Sample Data
 **SOON 🔜  **Techniques for testing neural network models with out-of-sample data to evaluate their performance.
 
