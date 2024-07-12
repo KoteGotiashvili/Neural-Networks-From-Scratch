@@ -4,6 +4,14 @@ import numpy as np
 class Adam:
     # Initialize optimizer - set settings
     def __init__(self, learning_rate=0.001, decay=0., epsilon=1e-7, beta_1=0.9, beta_2=0.999):
+        """
+
+        :param learning_rate:
+        :param decay:
+        :param epsilon:
+        :param beta_1:
+        :param beta_2:
+        """
         self.learning_rate = learning_rate
         self.current_learning_rate = learning_rate
         self.decay = decay
@@ -19,6 +27,13 @@ class Adam:
 
     # Update parameters
     def update_params(self, layer):
+
+        """
+         Update the weights and biases using Adam approach, which uses RMSProp+SGD momentum
+
+
+
+        """
         # If layer does not contain cache arrays, create them filled with zeros
         if not hasattr(layer, 'weight_cache'):
             layer.weight_momentums = np.zeros_like(layer.weights)
