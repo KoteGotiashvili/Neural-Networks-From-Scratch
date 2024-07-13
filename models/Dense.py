@@ -10,7 +10,6 @@ class Dense:
         self.weights = 0.01 * np.random.rand(input, neuron)
         self.biases = np.zeros((1, neuron))
         self.output = 0
-        #set regularization strength
         self.weight_regularization_L1 =weight_regularization_L1
         self.weight_regularization_L2 = weight_regularization_L2
         self.bias_regularization_L1 = bias_regularization_L1
