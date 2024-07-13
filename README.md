@@ -202,7 +202,7 @@ L2 regularization derivative is straightforward: ![rmsprop](images/L2.png)
 
 L1 is a bit of complicated: ![rmsprop](images/L1.png) This simply happens because of absolute value.
 
-
+There is L1 and L2 taking into consideration for backward pass: [backward](models/Dense.py)
 
 ## Validation Data
 **SOON 🔜  ** Methods for using validation data during model training to prevent overfitting.
