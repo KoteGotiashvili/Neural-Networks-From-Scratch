@@ -178,7 +178,20 @@ datasets and sparse data, helping models learn faster and more reliably.
 depends on problem type but if problem is too complex just try different ones
 and choose the best (:**
 ## Testing with Out-of-Sample Data
-**SOON 🔜  **Techniques for testing neural network models with out-of-sample data to evaluate their performance.
+Out-of sample data is just unseen data by neural net. Our task is to minimize loss
+and **generalize** the model, this is where regularization comes into play. L1 and L2 regularization
+is used like penalty and added to overall loss.
+
+**L1 Regularization:** It is sum of all the absolute values for weights and biases.
+
+**L2 Regularization:** Is the sum of the squared weights and biases.
+
+**L1 regularization is rarely used alone because of its nature of linearity, It 
+mostly used with L2.**
+
+**Overall Loss = DataLoss + L1weight + L2bias + L2weight + L2bias**
+
+**Regularization losses are calculated separately **
 
 ## Validation Data
 **SOON 🔜  ** Methods for using validation data during model training to prevent overfitting.
