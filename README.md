@@ -193,6 +193,9 @@ mostly used with L2.**
 
 **Regularization losses are calculated separately **
 
+This is for forward pass: [L1 and L2 regularization loss](loss/Loss.py)
+
+
 ## Validation Data
 **SOON 🔜  ** Methods for using validation data during model training to prevent overfitting.
 
