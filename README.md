@@ -198,6 +198,11 @@ This is for forward pass: [L1 and L2 regularization loss](loss/Loss.py)
 Implementing this means that overall loss is changed which must be accounting in to backpropagation.
 We need to cover derivatives of L1 nad L2 regularization.
 
+L2 regularization loss is straightforward: ![rmsprop](images/L2.png)
+
+L1 is a bit of complicated: ![rmsprop](images/L1.png) This simply happens because of absolute value.
+
+
 
 ## Validation Data
 **SOON 🔜  ** Methods for using validation data during model training to prevent overfitting.
