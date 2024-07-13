@@ -195,6 +195,9 @@ mostly used with L2.**
 
 This is for forward pass: [L1 and L2 regularization loss](loss/Loss.py)
 
+Implementing this means that overall loss is changed which must be accounting in to backpropagation.
+We need to cover derivatives of L1 nad L2 regularization.
+
 
 ## Validation Data
 **SOON 🔜  ** Methods for using validation data during model training to prevent overfitting.
