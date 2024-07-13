@@ -3,10 +3,18 @@ from nnfs.datasets import spiral_data
 
 
 class Dense:
-    def __init__(self, input, neuron):
+    def __init__(self, input, neuron,
+                 weight_regularization_L1=0,
+                 weight_regularization_L2=0,
+                 bias_regularization_L1=0, bias_regularization_L2=0):
         self.weights = 0.01 * np.random.rand(input, neuron)
         self.biases = np.zeros((1, neuron))
         self.output = 0
+        #set regularization strength
+        self.weight_regularization_L1 =weight_regularization_L1
+        self.weight_regularization_L2 = weight_regularization_L2
+        self.bias_regularization_L1 = bias_regularization_L1
+        sel.f.bias_regularization_L2 = bias_regularization_L2
 
     def forward(self, inputs):
 
