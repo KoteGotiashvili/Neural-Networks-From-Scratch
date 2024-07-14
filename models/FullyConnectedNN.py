@@ -1,3 +1,4 @@
+
 def fully_connected_nn(inputs, weights, biases):
     # Output of current layer
     layer_outputs = []

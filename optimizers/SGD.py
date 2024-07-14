@@ -2,73 +2,61 @@ import numpy as np
 
 
 class SGD:
-    def __init__(self, lr=1, decay=0., momentum=0.):
-        """
-        Args:
-        lr (float): The initial learning rate.
-        decay (float): The decay rate for the learning rate.
-        current_lr(float): updated current learning rate
-        iterations: epochs/steps
-        """
-        self.lr = lr
-        self.current_lr=lr
+    # Initialize optimizer - set settings,
+    # learning rate of 1. is default for this optimizer
+    def __init__(self, learning_rate=1., decay=0., momentum=0.):
+        self.learning_rate = learning_rate
+        self.current_learning_rate = learning_rate
         self.decay = decay
         self.iterations = 0
         self.momentum = momentum
 
-
+    # Call once before any parameter updates
     def pre_update_params(self):
-        """
-        Update the learning rate at the beginning of each iteration.
-        The learning rate is decayed by a factor of 1/(1+decay*iterations)
-        to prevent the learning rate from becoming too small, or large.
-
-        Returns:
-        None
-        """
         if self.decay:
-            self.current_lr = self.lr * (1./(1. + self.decay * self.iterations))
+            self.current_learning_rate = self.learning_rate * \
+                                         (1. / (1. + self.decay * self.iterations))
 
+    # Update parameters
     def update_params(self, layer):
-        """
-        Update weights and biases of the layer using stochastic gradient descent.
-        Args:
-        layer (Dense): The layer whose weights and biases need to be updated.
 
-        Returns:
-        None
-        """
+        # If we use momentum
         if self.momentum:
 
-            if not hasattr(layer,'weight_momentums'):
-                # if layer does not contain momentum arrays, create them filled with zeros
+            # If layer does not contain momentum arrays, create them
+            # filled with zeros
+            if not hasattr(layer, 'weight_momentums'):
                 layer.weight_momentums = np.zeros_like(layer.weights)
-                # same for bias
+                # If there is no momentum array for weights
+                # The array doesn't exist for biases yet either.
                 layer.bias_momentums = np.zeros_like(layer.biases)
 
-            weight_updates = self.momentum * layer.weight_momentums - self.current_lr * layer.dweights
+            # Build weight updates with momentum - take previous
+            # updates multiplied by retain factor and update with
+            # current gradients
+            weight_updates = \
+                self.momentum * layer.weight_momentums - \
+                self.current_learning_rate * layer.dweights
             layer.weight_momentums = weight_updates
 
-            #bias update
-            bias_updates = self.momentum * layer.bias_momentums - self.current_lr * layer.dbiases
+            # Build bias updates
+            bias_updates = \
+                self.momentum * layer.bias_momentums - \
+                self.current_learning_rate * layer.dbiases
             layer.bias_momentums = bias_updates
 
+        # Vanilla SGD updates (as before momentum update)
         else:
-            weight_updates = -self.current_lr * layer.dweights
-            bias_updates = -self.current_lr * layer.dbiases
+            weight_updates = -self.current_learning_rate * \
+                             layer.dweights
+            bias_updates = -self.current_learning_rate * \
+                           layer.dbiases
 
-        # update weights and biases
+        # Update weights and biases using either
+        # vanilla or momentum updates
         layer.weights += weight_updates
         layer.biases += bias_updates
 
-
-
-
+    # Call once after any parameter updates
     def post_update_params(self):
-        """
-        Reset the gradients of the layer for the next iteration.
-
-        Returns:
-        None
-        """
         self.iterations += 1
