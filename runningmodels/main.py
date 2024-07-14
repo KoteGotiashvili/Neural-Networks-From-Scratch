@@ -8,6 +8,7 @@ from activation.SoftMax import SoftMax
 from loss.CategoricalCrossEntropy import CategoricalCrossEntropy
 from softmaxandentropy.Activation_Softmax_Loss_CategoricalCrossEntropy import Activation_Softmax_Loss_CategoricalCrossentropy
 from optimizers.SGD import SGD
+from dropout.Dropout import Dropout
 
 nnfs.init()
 
@@ -20,6 +21,10 @@ dense1 = Dense(2, 64, weight_regularizer_l2=5e-4,
 
 # Create ReLU activation (to be used with Dense layer):
 activation1 = ReLU()
+
+# Dropout layer
+
+dropout1 = Dropout(0.1)
 
 # Create second Dense layer with 64 input features (as we take output
 # of previous layer here) and 3 output values (output values)
@@ -41,9 +46,10 @@ for epoch in range(10001):
     # takes the output of first dense layer here
     activation1.forward(dense1.output)
 
-    # Perform a forward pass through second Dense layer
-    # takes outputs of activation function of first layer as inputs
-    dense2.forward(activation1.output)
+    dropout1.forward(activation1.output)
+
+    dense2.forward(dropout1.output)
+
 
     # Perform a forward pass through the activation/loss function
     # takes the output of second dense layer here and returns loss
