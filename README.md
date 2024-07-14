@@ -15,17 +15,14 @@ Welcome to the **Neural Networks from Scratch** repository. This project is a co
 9. [Backpropagation](#backpropagation)
 10. [Optimizers](#optimizers)
 11. [Testing with Out-of-Sample Data](#testing-with-out-of-sample-data)
-12. [Validation Data](#validation-data)
-13. [Training Dataset](#training-dataset)
-14. [L1 and L2 Regularization](#l1-and-l2-regularization)
-15. [Dropout](#dropout)
-16. [Binary Logistic Regression](#binary-logistic-regression)
-17. [Regression](#regression)
-18. [Model Object](#model-object)
-19. [A Real Dataset](#a-real-dataset)
-20. [Model Evaluation](#model-evaluation)
-21. [Saving and Loading Models and Their Parameters](#saving-and-loading-models-and-their-parameters)
-22. [Prediction / Inference](#prediction-inference)
+12. [Dropout](#dropout)
+13. [Binary Logistic Regression](#binary-logistic-regression)
+14. [Regression](#regression)
+15. [Model Object](#model-object)
+16. [A Real Dataset](#a-real-dataset)
+17. [Model Evaluation](#model-evaluation)
+18. [Saving and Loading Models and Their Parameters](#saving-and-loading-models-and-their-parameters)
+19. [Prediction / Inference](#prediction-inference)
 
 
 ## Introducing Neural Networks
@@ -204,17 +201,13 @@ L1 is a bit of complicated: ![rmsprop](images/L1.png) This simply happens becaus
 
 There is L1 and L2 taking into consideration for backward pass: [backward](models/Dense.py)
 
-## Validation Data
-**SOON 🔜  ** Methods for using validation data during model training to prevent overfitting.
-
-## Training Dataset
-**SOON 🔜  **Guidelines for preparing and using training datasets effectively.
-
-## L1 and L2 Regularization
-**SOON 🔜  **Implement regularization techniques to improve model generalization.
 
 ## Dropout
-**SOON 🔜  ** Learn about dropout techniques to prevent overfitting in neural networks.
+Another approach for neural net regularization is adding a **Dropout Layer**. Idea
+is that to prevent neural net from becoming too dependent on any neuron. This is very straightforward
+you should disable some percentage neurons during every froward pass. Dropout does not
+disable neurons it just set them to zero. **While dropout helps neural net generalize it's not 
+something that we want to utilize when predicting. **
 
 ## Binary Logistic Regression
 **SOON 🔜  ** Detailed guide to implementing binary logistic regression and binary cross-entropy loss.
