@@ -209,6 +209,8 @@ you should disable some percentage neurons during every froward pass. Dropout do
 disable neurons it just set them to zero. **While dropout helps neural net generalize it's not 
 something that we want to utilize when predicting. **
 
+**Dropout From Scratch:** [Dropout](dropout/Dropout.py)
+
 ## Binary Logistic Regression
 **SOON 🔜  ** Detailed guide to implementing binary logistic regression and binary cross-entropy loss.
 
