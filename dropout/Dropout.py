@@ -24,7 +24,7 @@ class Dropout:
 
         self.binary_mask = np.random.binomial(1, self.rate, size=inputs.shape)/ self.rate
 
-        self.outputs = inputs * self.binary_mask
+        self.output = inputs * self.binary_mask
 
     def backward(self, dvalues):
         """
