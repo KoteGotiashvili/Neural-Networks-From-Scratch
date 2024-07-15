@@ -212,7 +212,26 @@ something that we want to utilize when predicting. **
 **Dropout From Scratch:** [Dropout](dropout/Dropout.py)
 
 ## Binary Logistic Regression
-**SOON 🔜  ** Detailed guide to implementing binary logistic regression and binary cross-entropy loss.
+**Binary Logistic Regression:** Is used when outcome is binary. For example, Spam detection,
+I help us to distinguish between whether message is spam or not. 0 or 1. It is used with Sigmoid 
+Activation function, which approaches both maximum and minimum values exponentially fast, this property 
+makes the Sigmoid activation function a good candidate to apply to the final layer's output.
+
+Graph and function of Sigmoid:
+
+![Sigmoid](images/sigmoid.png)
+
+Derivative of sigmoid:
+
+![SigmoidDerivative](images/sigmoidderivative.png)
+
+Sigmoid Implementation: [Sigmoid From Scratch](activation/Sigmoid.py)
+
+Code:
+
+
+
+
 
 ## Regression
 **SOON 🔜  ** Explore regression techniques, including mean squared error and mean absolute error, with code examples.
