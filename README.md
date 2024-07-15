@@ -30,6 +30,17 @@ Originally known as artificial neural networks, neural networks are computationa
 models inspired by the human brain. They consist of interconnected layers of nodes 
 or neurons that process data, enabling machines to learn patterns and make decisions.
 They find applications in almost everything.
+
+This is pretty visual representation of neural net (:
+
+![pretty image ](images/neuralnet.jpg)
+
+But this is actual (:
+
+![pretty image ](images/actualneuralnet.png)
+
+More actual is just numbers (:
+
 ## Coding Our First Neurons
 Step-by-step guide to Fully Connected Artificial Neural Network, layers of neurons, 
 and operations like dot products and matrix multiplications using pure python. 
