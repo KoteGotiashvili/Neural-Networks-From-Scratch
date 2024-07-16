@@ -243,7 +243,11 @@ predicted probabilities match true binary labels. It penalizes deviations
 using logarithmic loss. After loss is calculated, we need to find mean of this loss
 to find average loss.
 
+For backward pass there is Binary Cross-Entropy Loss Derivative:
 
+![binarycrossentropy](images/binarycrossentropy.png)
+
+Then we need to find mean of this, and using chain rule we will multiply it by 1/J.
 
 
 
