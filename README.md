@@ -249,6 +249,7 @@ For backward pass there is Binary Cross-Entropy Loss Derivative:
 
 Then we need to find mean of this, and using chain rule we will multiply it by 1/J.
 
+Full code for forward/backward pass: [Binary Cross-Entropy From Scratch](loss/BinaryCrossEntropy.py)
 
 
 
