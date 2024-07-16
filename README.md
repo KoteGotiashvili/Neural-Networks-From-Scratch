@@ -238,7 +238,6 @@ Derivative of sigmoid:
 
 Sigmoid Implementation: [Sigmoid From Scratch](activation/Sigmoid.py)
 
-Code:
 
 
 
