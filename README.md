@@ -238,6 +238,11 @@ Derivative of sigmoid:
 
 Sigmoid Implementation: [Sigmoid From Scratch](activation/Sigmoid.py)
 
+**Binary Cross-Entropy Loss:** Binary cross entropy loss measures how well
+predicted probabilities match true binary labels. It penalizes deviations 
+using logarithmic loss. After loss is calculated, we need to find mean of this loss
+to find average loss.
+
 
 
 
