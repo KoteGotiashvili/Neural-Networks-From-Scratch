@@ -281,6 +281,12 @@ and average those absolute values.
 
 Derivative of MAE:  ![MAE](images/MAEDerivative.png)
 
+**MAE Code**: [Mean Absolute Error From Scratch](loss/MAE.py)]
+
+**In Practice MAE loss is used less frequently than MSE loss**
+
+**Mean Absolute Error (MAE) is simple to calculate and handles outliers well but is not differentiable at zero. Mean Squared Error
+(MSE) is sensitive to outliers and penalizes larger errors more due to squaring.**
 ## Model Object
 **SOON 🔜  **Creating and using model objects for easier neural network management.
 
