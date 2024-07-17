@@ -264,6 +264,18 @@ we have different data, and we have to approach it in other way.
 
 Code: [Binary Cross-Entropy From Scratch](activation/Linear.py)
 
+Two methods for calculating loss in regression are MSE nad MAE
+
+**Mean Squared Error/Loss(MSE):** It is simply square of differences between
+predicted and actual, true values of single outputs and average those squared values.
+![MSE](images/mse.png)
+
+Derivative is very straightforward:
+![MSEDerivative](images/msederivative.png)
+
+
+
+
 ## Model Object
 **SOON 🔜  **Creating and using model objects for easier neural network management.
 
