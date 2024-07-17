@@ -273,7 +273,7 @@ predicted and actual, true values of single outputs and average those squared va
 Derivative is very straightforward:
 ![MSEDerivative](images/msederivative.png)
 
-
+**MSE Code:** [Mean Squared Error From Scratch](loss/MSE.py)
 
 
 ## Model Object
