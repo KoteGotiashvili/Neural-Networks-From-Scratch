@@ -275,6 +275,11 @@ Derivative is very straightforward:
 
 **MSE Code:** [Mean Squared Error From Scratch](loss/MSE.py)
 
+**MAE:** Mean Absolute Error is the absolute difference between the predicted and true values in a single output
+and average those absolute values.
+![MAE](images/MAE.png)
+
+Derivative of MAE:  ![MAE](images/MAEDerivative.png)
 
 ## Model Object
 **SOON 🔜  **Creating and using model objects for easier neural network management.
