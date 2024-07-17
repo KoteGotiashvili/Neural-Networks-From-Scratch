@@ -254,7 +254,15 @@ Full code for forward/backward pass: [Binary Cross-Entropy From Scratch](loss/Bi
 
 
 ## Regression
-**SOON 🔜  ** Explore regression techniques, including mean squared error and mean absolute error, with code examples.
+I've been working with classification models so far, where we try to determine
+what something is based on probabilities. In case of **Regression** we are trying to
+predict some number, for example what stock price will be in 5 years from now. Approach 
+is different, result is different, and consequently we need different ways to measure loss, also
+we have different data, and we have to approach it in other way.
+
+**Linear Activation:** I'm going to use linear activation function fo the output layer.
+
+Code: [Binary Cross-Entropy From Scratch](activation/Linear.py)
 
 ## Model Object
 **SOON 🔜  **Creating and using model objects for easier neural network management.
