@@ -287,6 +287,16 @@ Derivative of MAE:  ![MAE](images/MAEDerivative.png)
 
 **Mean Absolute Error (MAE) is simple to calculate and handles outliers well but is not differentiable at zero. Mean Squared Error
 (MSE) is sensitive to outliers and penalizes larger errors more due to squaring.**
+
+
+
+**Accuracy In Regression:**
+
+**There's no perfect way to show accuracy with regression**
+
+In this case we want to consider predicted value to be correct or close enough to actual value.
+
+
 ## Model Object
 **SOON 🔜  **Creating and using model objects for easier neural network management.
 
