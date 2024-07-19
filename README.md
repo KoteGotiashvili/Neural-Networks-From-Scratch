@@ -298,8 +298,9 @@ In this case we want to consider predicted value to be correct or close enough t
 
 
 ## Model Object
-**SOON 🔜  **Creating and using model objects for easier neural network management.
 
+It makes more sense to make model class which will be object itself, we want to add layers, activation functions, etc
+object class makes it easier to use and understand.
 ## A Real Dataset
 **SOON 🔜  ** Practical guide to working with real datasets, including data preparation, loading, preprocessing, and training.
 
