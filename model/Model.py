@@ -18,3 +18,15 @@ class Model:
         """
 
         self.layers.append(layer)
+    def set(self, *, loss, optimizer):
+        """
+        After adding layers we also want to set loss and optimizer functions
+
+        Set the loss and optimizer for the model.
+
+        :param loss: Loss function to be used
+        :param optimizer: Optimizer to be used
+        :return: None, just set loss and optimizer
+        """
+        self.loss = loss
+        self.optimizer = optimizer
