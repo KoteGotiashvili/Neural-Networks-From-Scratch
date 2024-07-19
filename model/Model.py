@@ -32,7 +32,7 @@ class Model:
         self.optimizer = optimizer
 
 
-    def train(self, X, y, *, epochs=1, print_every=100):
+    def train(self, X, y, *, epochs=1, print_every=10):
 
         for epoch in range(1, epochs):
 
