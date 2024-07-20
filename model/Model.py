@@ -74,3 +74,19 @@ class Model:
             else:
                 self.layers[i].prev = self.layers[i-1]
                 self.layers[i].next = self.loss
+
+
+    def forward(self, X):
+        """
+        We have information about layers(next,prev), now we can perform forward pass
+
+        """
+        # call forward on input layer
+        self.inpute_layer.forward(X)
+
+        # call forward on each layer
+        for layer in self.layers:
+            layer.forward(layer.prev.output)
+
+        # layer is last objet from list, return its output
+        return layer.output
