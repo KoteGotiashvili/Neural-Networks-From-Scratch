@@ -28,10 +28,12 @@ model.set(
     optimizer=Adam(learning_rate=0.05, decay=1e-3)
 )
 
+#finalize the model, get info about layers
+model.finalize()
 
-model.train(X, y, epochs=10000, print_every=100)
+
+model.train(X, y, epochs=1000, print_every=100)
 
 
-print(model.layers)
 
 
