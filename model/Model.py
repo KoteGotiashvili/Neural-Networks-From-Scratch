@@ -78,6 +78,12 @@ class Model:
                 self.layers[i].prev = self.layers[i-1]
                 self.layers[i].next = self.loss
 
+            # check if layer contains attribute called "weights", if yes it is trainable layer, and add to the list of trainable layers
+            # checking weights is enough, we do not need biases
+            if hasattr(self.layers[i], "weights"):
+                self.trainable_layers.append(self.layers[i])
+
+
 
     def forward(self, X):
         """
