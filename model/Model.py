@@ -35,6 +35,8 @@ class Model:
     def train(self, X, y, *, epochs=1, print_every=10):
 
         for epoch in range(1, epochs):
+            #perform forward pass
+            output = self.forward(X)
 
             #temporary
             pass
