@@ -304,6 +304,7 @@ object class makes it easier to use and understand.
 
 We are going to need modify our code and also we need previous layer output to perform forward/backward pass.
 
+All I'm doing here is to create something like Deep Learning framework, like PyTorch.
 
 ## A Real Dataset
 **SOON 🔜  ** Practical guide to working with real datasets, including data preparation, loading, preprocessing, and training.
