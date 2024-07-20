@@ -1,5 +1,5 @@
 import numpy as np
-
+from model.LayerInput import LayerInput
 class Model:
 
     def __init__(self):
@@ -38,3 +38,39 @@ class Model:
 
             #temporary
             pass
+
+    def finalize(self):
+
+        """
+        This code creates an input layer and sets next and prev references
+        for each layer contained within self.layers
+
+        This method should be called after all layers have been added to the model.
+
+        :return: None, just finalize the model
+        """
+
+        #create and set the input layer
+        self.inpute_layer = LayerInput()
+
+        # count all objects, layers
+        layer_count = len(self.layers)
+
+        #iterate through objects
+
+        for i in range(layer_count):
+
+            # if it is the first layer, the previous layer object is the input layer
+            if i == 0:
+                self.layers[i].prev = self.inpute_layer
+                self.layers[i].next = self.layers[i+1]
+
+            # all layer expect first and last
+            elif i < layer_count - 1:
+                self.layers[i].prev = self.layers[i+1]
+                self.layers[i].next = self.layers[i+1]
+
+            # the last layer - the next object is the loss
+            else:
+                self.layers[i].prev = self.layers[i-1]
+                self.layers[i].next = self.loss
