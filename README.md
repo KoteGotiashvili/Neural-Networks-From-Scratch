@@ -301,6 +301,10 @@ In this case we want to consider predicted value to be correct or close enough t
 
 It makes more sense to make model class which will be object itself, we want to add layers, activation functions, etc
 object class makes it easier to use and understand.
+
+We are going to need modify our code and also we need previous layer output to perform forward/backward pass.
+
+
 ## A Real Dataset
 **SOON 🔜  ** Practical guide to working with real datasets, including data preparation, loading, preprocessing, and training.
 
