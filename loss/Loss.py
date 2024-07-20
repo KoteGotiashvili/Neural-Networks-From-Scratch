@@ -6,6 +6,13 @@ class Loss:
 
 
     def remember_trainable_layers(self, trainable_layers):
+        """
+        Stores the trainable layers for later use.
+
+        :param trainable_layers: List of trainable layers.
+        :return: None.
+
+        """
         self.trainable_layers = trainable_layers
 
     # Regularization loss calculation
