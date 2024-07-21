@@ -23,3 +23,7 @@ class Sigmoid:
         # multiply gradients by sigmoid derivative to measure change in backward pass
         self.dinputs = dvalues * (1- self.output) * self.output
 
+    # let's create prediction method that will choose the appropriate method for out model
+    def predictions(self, outputs):
+        return (outputs >= 0.5) * 1
+

@@ -17,4 +17,8 @@ class ReLU:
         # Zero gradient where input values were negative
         self.dinputs[self.inputs <= 0] = 0
 
+    # let's create prediction method that will choose the appropriate method for out model
+    def predictions(self, outputs):
+        return outputs
+
 

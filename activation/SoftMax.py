@@ -33,3 +33,9 @@ class SoftMax:
             # and add it to the array of sample gradients
             self.dinputs[index] = np.dot(jacobian_matrix,
                                          single_dvalues)
+
+
+    # let's create prediction method that will choose the appropriate method for out model
+    # calculate predictions for outputs
+    def predictions(self, outputs):
+        return np.argmax(outputs, axis=1)
