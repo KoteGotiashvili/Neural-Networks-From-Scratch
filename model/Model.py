@@ -19,19 +19,20 @@ class Model:
         """
 
         self.layers.append(layer)
-    def set(self, *, loss, optimizer):
+    def set(self, *, loss, optimizer, accuracy):
         """
-        After adding layers we also want to set loss and optimizer functions
+        After adding layers we also want to set loss and optimizer, accuracy functions
 
-        Set the loss and optimizer for the model.
+        Set the loss and optimizer, accuracy for the model.
 
         :param loss: Loss function to be used
         :param optimizer: Optimizer to be used
-        :return: None, just set loss and optimizer
+        :param accuracy: Accuracy to be used
+        :return: None
         """
         self.loss = loss
         self.optimizer = optimizer
-
+        self.accuracy = accuracy
 
     def train(self, X, y, *, epochs=1, print_every=10):
 
