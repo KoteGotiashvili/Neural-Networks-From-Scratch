@@ -74,9 +74,11 @@ class Model:
                 self.layers[i].next = self.layers[i+1]
 
             # the last layer - the next object is the loss
+            # output is models outpit
             else:
                 self.layers[i].prev = self.layers[i-1]
                 self.layers[i].next = self.loss
+                self.output_layer_activation = self.layers[i]
 
             # check if layer contains attribute called "weights", if yes it is trainable layer, and add to the list of trainable layers
             # checking weights is enough, we do not need biases
