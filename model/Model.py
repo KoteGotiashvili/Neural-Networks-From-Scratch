@@ -39,8 +39,14 @@ class Model:
         for epoch in range(1, epochs):
             #perform forward pass
             output = self.forward(X)
-            print(output)
-            #temporary
+
+            #calculate loss
+            data_loss, regularization_loss = self.loss.calculate(output, y)
+            loss = data_loss + regularization_loss
+
+            # get predictions and calculate accuracy
+            predictions = self.output_layer_activation.predictions(output)
+            accuracy = self.accuracy.calculate(predictions, y)
             exit()
 
     def finalize(self):
@@ -85,6 +91,9 @@ class Model:
             # checking weights is enough, we do not need biases
             if hasattr(self.layers[i], "weights"):
                 self.trainable_layers.append(self.layers[i])
+
+        # update loss object with trainable layers
+        self.loss.remember_trainable_layers(self.trainable_layers)
 
 
 
