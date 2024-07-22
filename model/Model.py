@@ -82,11 +82,10 @@ class Model:
         #create and set the input layer
         self.input_layer = LayerInput()
 
+        self.trainable_layers = []
         # count all objects, layers
         layer_count = len(self.layers)
-
         #iterate through objects
-
         for i in range(layer_count):
 
             # if it is the first layer, the previous layer object is the input layer
