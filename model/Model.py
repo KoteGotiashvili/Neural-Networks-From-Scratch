@@ -36,7 +36,10 @@ class Model:
 
     def train(self, X, y, *, epochs=1, print_every=10):
 
-        for epoch in range(1, epochs):
+        #initalize accuracy object
+        self.accuracy.init(y)
+
+        for epoch in range(1, epochs+1):
             #perform forward pass
             output = self.forward(X)
 
