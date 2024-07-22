@@ -60,4 +60,4 @@ class Loss:
         data_loss = np.mean(sample_losses)
 
         # Return loss
-        return data_loss
+        return data_loss, self.regularization_loss()
