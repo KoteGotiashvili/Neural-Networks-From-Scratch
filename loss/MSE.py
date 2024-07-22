@@ -1,7 +1,7 @@
 import numpy as np
-
+from loss.Loss import Loss
 #Mean Squared Error/Loss
-class MSE:
+class MSE(Loss):
 
     def forward(self, y_pred, y_true):
         sample_losses = np.mean((y_pred - y_true)**2, axis=-1)
