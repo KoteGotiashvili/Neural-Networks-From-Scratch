@@ -47,7 +47,26 @@ class Model:
             # get predictions and calculate accuracy
             predictions = self.output_layer_activation.predictions(output)
             accuracy = self.accuracy.calculate(predictions, y)
-            exit()
+
+            accuracy = self.accuracy.calculate(predictions, y)
+
+            #perform backward pass
+            self.backward(output, y)
+
+            # Optimizer Update parameters
+            self.optimizer.pre_update_params()
+            for layer in self.trainable_layers:
+                self.optimizer.update_params(layer)
+            self.optimizer.post_update_params()
+
+            # print summary
+            if not epoch % print_every == 0:
+                print(f"Epoch: {epoch}, "
+                      f"Loss: {loss:.4f}, "
+                      f"Accuracy: {accuracy:.4f},"
+                      f"Data Loss:  {data_loss:.4f}",
+                      f"Reg_loss: {regularization_loss:.3f}",
+                      f"lr:{self.optimizer.current_learning_rate}")
 
     def finalize(self):
 
@@ -112,3 +131,11 @@ class Model:
 
         # layer is last objet from list, return its output
         return layer.output
+
+    def backward(self, output, y):
+        # last is set loss, so first call backward on loss
+        self.loss.backward(output, y)
+
+        # then call backward on each layer, reversed order passing dinpuds as parameter
+        for layer in reversed(self.layers):
+            layer.backward(layer.next.dinputs)
