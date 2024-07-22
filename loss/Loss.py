@@ -16,7 +16,7 @@ class Loss:
         self.trainable_layers = trainable_layers
 
     # Regularization loss calculation
-    def regularization_loss(self, layer):
+    def regularization_loss(self):
 
         # 0 by default
         regularization_loss = 0
