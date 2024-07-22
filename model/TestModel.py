@@ -5,10 +5,10 @@ from activation.Linear import Linear
 from loss.MSE import MSE
 from optimizers.Adam import Adam
 from nnfs.datasets import sine_data
-
+from accuracy.RegressionAccuracy import RegressionAccuracy
+from loss.BinaryCrossEntropy import BinaryCrossEntropy
 # create dataset
 X, y = sine_data()
-
 model = Model()
 
 
@@ -25,7 +25,8 @@ print(model.layers)
 
 model.set(
     loss=MSE(),
-    optimizer=Adam(learning_rate=0.05, decay=1e-3)
+    optimizer=Adam(learning_rate=0.05, decay=1e-3),
+    accuracy=RegressionAccuracy()
 )
 
 #finalize the model, get info about layers
