@@ -1,5 +1,6 @@
 import Loss
 import numpy as np
+from loss.Loss import Loss
 
 class BinaryCrossEntropy(Loss):
 
