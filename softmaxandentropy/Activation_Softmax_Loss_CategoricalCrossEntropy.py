@@ -5,9 +5,6 @@ from loss.CategoricalCrossEntropy import CategoricalCrossEntropy
 class Activation_Softmax_Loss_CategoricalCrossentropy:
     # Creates activation and loss function objects
     # Creates activation and loss function objects
-    def __init__(self):
-        self.activation = SoftMax()
-        self.loss = CategoricalCrossEntropy()
 
     # Forward pass
     # Backward pass
