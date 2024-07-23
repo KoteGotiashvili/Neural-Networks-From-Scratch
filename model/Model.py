@@ -117,29 +117,30 @@ class Model:
             self.optimizer.post_update_params()
 
             # print summary
-            if not epoch % print_every == 0:
+            if  epoch % print_every == 0:
                 print(f"Epoch: {epoch}, "
                       f"Loss: {loss:.4f}, "
                       f"Accuracy: {accuracy:.4f},"
                       f"Data Loss:  {data_loss:.4f}",
                       f"Reg_loss: {regularization_loss:.3f}",
                       f"lr:{self.optimizer.current_learning_rate}")
+
             # for validation data
-            if validation_data is not None:
-                X_val, y_val = validation_data
+        if validation_data is not None:
+            X_val, y_val = validation_data
 
-                #perform forward pass
-                output = self.forward(X_val, training=False)
-                # calculate loss
-                loss = self.loss.calculate(output, y_val)
-                #get prerdicions and caluclate accuracy
-                predictions = self.output_layer_activation.predictions(output)
-                accuracy = self.accuracy.calculate(predictions, y_val)
+            #perform forward pass
+            output = self.forward(X_val, training=False)
+            # calculate loss
+            loss = self.loss.calculate(output, y_val)
+            #get prerdicions and caluclate accuracy
+            predictions = self.output_layer_activation.predictions(output)
+            accuracy = self.accuracy.calculate(predictions, y_val)
 
-                #print summary
-                print(f"Validation, Epoch: {epoch}, "
-                      f"Loss: {loss:.4f}, "
-                      f"Accuracy: {accuracy:.4f}")
+            #print summary
+            print(f"Validation, Epoch: {epoch}, "
+                   f"Loss: {loss:.4f}, "
+                    f"Accuracy: {accuracy:.4f}")
 
 
 
