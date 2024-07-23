@@ -12,7 +12,7 @@ class Dropout:
         #each neuron has a 70% chance of being retained (not dropped out) and a 30% chance of being dropped out.
         self.rate = 1-rate
 
-    def forward(self, inputs):
+    def forward(self, inputs, training):
         """
                Perform forward propagation with dropout.
 
@@ -21,6 +21,10 @@ class Dropout:
         """
 
         self.inputs = inputs
+
+        if not training:
+            self.output = inputs.copy()
+            return
 
         self.binary_mask = np.random.binomial(1, self.rate, size=inputs.shape)/ self.rate
 
