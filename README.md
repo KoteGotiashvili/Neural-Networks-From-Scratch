@@ -306,6 +306,8 @@ We are going to need modify our code and also we need previous layer output to p
 
 All I'm doing here is to create something like Deep Learning framework, like PyTorch.
 
+This is model class code, which I think I can call **Deep Learning Framework** [Deep Learning Framework Main class](model/Model.py)
+
 ## A Real Dataset
 **SOON 🔜  ** Practical guide to working with real datasets, including data preparation, loading, preprocessing, and training.
 
