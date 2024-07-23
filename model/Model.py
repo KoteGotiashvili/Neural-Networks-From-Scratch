@@ -44,7 +44,7 @@ class Model:
             output = self.forward(X)
 
             #calculate loss
-            data_loss, regularization_loss = self.loss.calculate(output, y)
+            data_loss, regularization_loss = self.loss.calculate(output, y, include_regularization=True)
             loss = data_loss + regularization_loss
 
             # get predictions and calculate accuracy
