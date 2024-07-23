@@ -2,7 +2,7 @@ import numpy as np
 
 class ReLU:
     # Forward pass
-    def forward(self, inputs):
+    def forward(self, inputs, training):
         # Remember input values
         self.inputs = inputs
         # Calculate output values from inputs

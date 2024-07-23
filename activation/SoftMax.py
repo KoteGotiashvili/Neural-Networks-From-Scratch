@@ -3,7 +3,7 @@ import numpy as np
 class SoftMax:
 
     # Forward pass
-    def forward(self, inputs):
+    def forward(self, inputs, training):
         # Remember input values
         self.inputs = inputs
 
