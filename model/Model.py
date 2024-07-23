@@ -41,7 +41,7 @@ class Model:
 
         for epoch in range(1, epochs+1):
             #perform forward pass
-            output = self.forward(X)
+            output = self.forward(X, training=True)
 
             #calculate loss
             data_loss, regularization_loss = self.loss.calculate(output, y, include_regularization=True)
@@ -70,11 +70,12 @@ class Model:
                       f"Data Loss:  {data_loss:.4f}",
                       f"Reg_loss: {regularization_loss:.3f}",
                       f"lr:{self.optimizer.current_learning_rate}")
+            # for validation data
             if validation_data is not None:
                 X_val, y_val = validation_data
 
                 #perform forward pass
-                output = self.forward(X_val)
+                output = self.forward(X_val, training=False)
                 # calculate loss
                 loss = self.loss.calculate(output, y_val)
                 #get prerdicions and caluclate accuracy
@@ -134,18 +135,18 @@ class Model:
 
 
 
-    def forward(self, X):
+    def forward(self, X, training):
         """
         We have information about layers(next,prev), now we can perform forward pass
 
         """
         # call forward on input layer
-        self.input_layer.forward(X)
+        self.input_layer.forward(X, training)
 
 
         # call forward on each layer
         for layer in self.layers:
-            layer.forward(layer.prev.output)
+            layer.forward(layer.prev.output, training)
 
         # layer is last objet from list, return its output
         return layer.output
