@@ -51,13 +51,17 @@ class Loss:
 
     # Calculates the data and regularization losses
     # given model output and ground truth values
-    def calculate(self, output, y):
+    def calculate(self, output, y, include_regularization=False):
 
         # Calculate sample losses
         sample_losses = self.forward(output, y)
 
         # Calculate mean loss
         data_loss = np.mean(sample_losses)
+
+        #if just data loss return it
+        if not include_regularization:
+            return data_loss
 
         # Return loss
         return data_loss, self.regularization_loss()
