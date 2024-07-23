@@ -10,6 +10,9 @@ from loss.BinaryCrossEntropy import BinaryCrossEntropy
 from nnfs.datasets import spiral_data
 from activation.Sigmoid import Sigmoid
 from accuracy.CategoricalAccuracy import CategoricalAccuracy
+from dropout.Dropout import Dropout
+from activation.SoftMax import SoftMax
+from loss.CategoricalCrossEntropy import CategoricalCrossEntropy
 # create dataset
 X, y = sine_data()
 model = Model()
@@ -42,28 +45,29 @@ model.finalize()
 
 ## Let's do on regression task
 
-X, y = spiral_data(samples=100, classes=2)
-X_test, y_test = spiral_data(samples=100, classes=2)
+X, y = spiral_data(samples=100, classes=3)
+X_test, y_test = spiral_data(samples=100, classes=3)
 
 # reshape labels to be a list of lists
 # inner list contains either 1 or 0
-#print(y)
-y = y.reshape(-1, 1)
-#print(y)
-y_test = y_test.reshape(-1, 1)
+# #print(y)
+# y = y.reshape(-1, 1)
+# #print(y)
+# y_test = y_test.reshape(-1, 1)
 
 #init model
 model = Model()
 
-model.add(Dense(2, 64, weight_regularizer_l2=5e-4, bias_regularizer_l2=5e-4))
+model.add(Dense(2, 512, weight_regularizer_l2=5e-4, bias_regularizer_l2=5e-4))
 model.add(ReLU())
-model.add(Dense(64, 1))
-model.add(Sigmoid())
+model.add(Dropout(0.1))
+model.add(Dense(512, 3))
+model.add(SoftMax())
 
 # set loss, optimzier and accuracy
 model.set(
-    loss=BinaryCrossEntropy(),
-    optimizer=Adam(learning_rate=0.05, decay=5e-7),
+    loss=CategoricalCrossEntropy(),
+    optimizer=Adam(learning_rate=0.05, decay=5e-5),
     accuracy=CategoricalAccuracy(binary=True)
 )
 
