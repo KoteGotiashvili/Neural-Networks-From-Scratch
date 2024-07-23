@@ -1,6 +1,9 @@
 import numpy as np
 from model.LayerInput import LayerInput
 from sys import exit
+from activation.SoftMax import SoftMax
+from loss.CategoricalCrossEntropy import CategoricalCrossEntropy
+from softmaxandentropy.Activation_Softmax_Loss_CategoricalCrossEntropy import Activation_Softmax_Loss_CategoricalCrossentropy
 class Model:
 
     def __init__(self):
@@ -33,6 +36,57 @@ class Model:
         self.loss = loss
         self.optimizer = optimizer
         self.accuracy = accuracy
+
+    def finalize(self):
+
+        """
+        This code creates an input layer and sets next and prev references
+        for each layer contained within self.layers
+
+        This method should be called after all layers have been added to the model.
+
+        :return: None, just finalize the model
+        """
+
+        # create and set the input layer
+        self.input_layer = LayerInput()
+
+        self.trainable_layers = []
+        # count all objects, layers
+        layer_count = len(self.layers)
+        # iterate through objects
+        for i in range(layer_count):
+
+            # if it is the first layer, the previous layer object is the input layer
+            if i == 0:
+                self.layers[i].prev = self.input_layer
+                self.layers[i].next = self.layers[i + 1]
+
+            # all layer expect first and last
+            elif i < layer_count - 1:
+                self.layers[i].prev = self.layers[i - 1]
+                self.layers[i].next = self.layers[i + 1]
+
+            # the last layer - the next object is the loss
+            # output is models outpit
+            else:
+                self.layers[i].prev = self.layers[i - 1]
+                self.layers[i].next = self.loss
+                self.output_layer_activation = self.layers[i]
+
+            # check if layer contains attribute called "weights", if yes it is trainable layer, and add to the list of trainable layers
+            # checking weights is enough, we do not need biases
+            if hasattr(self.layers[i], "weights"):
+                self.trainable_layers.append(self.layers[i])
+
+        # update loss object with trainable layers
+        self.loss.remember_trainable_layers(self.trainable_layers)
+
+        # if output activation is softmax and loss function categorical cross entropy
+        # create and object of combined activation and loss function containing faster gradient calculation
+        if isinstance(self.layers[-1], SoftMax) and isinstance(self.loss, CategoricalCrossEntropy):
+            # create and object of combined activation and loss func
+            self.softmax_classifier_output = Activation_Softmax_Loss_CategoricalCrossentropy()
 
     def train(self, X, y, *, epochs=1, print_every=10, validation_data=None):
 
@@ -87,51 +141,6 @@ class Model:
                       f"Loss: {loss:.4f}, "
                       f"Accuracy: {accuracy:.4f}")
 
-
-    def finalize(self):
-
-        """
-        This code creates an input layer and sets next and prev references
-        for each layer contained within self.layers
-
-        This method should be called after all layers have been added to the model.
-
-        :return: None, just finalize the model
-        """
-
-        #create and set the input layer
-        self.input_layer = LayerInput()
-
-        self.trainable_layers = []
-        # count all objects, layers
-        layer_count = len(self.layers)
-        #iterate through objects
-        for i in range(layer_count):
-
-            # if it is the first layer, the previous layer object is the input layer
-            if i == 0:
-                self.layers[i].prev = self.input_layer
-                self.layers[i].next = self.layers[i+1]
-
-            # all layer expect first and last
-            elif i < layer_count - 1:
-                self.layers[i].prev = self.layers[i-1]
-                self.layers[i].next = self.layers[i+1]
-
-            # the last layer - the next object is the loss
-            # output is models outpit
-            else:
-                self.layers[i].prev = self.layers[i-1]
-                self.layers[i].next = self.loss
-                self.output_layer_activation = self.layers[i]
-
-            # check if layer contains attribute called "weights", if yes it is trainable layer, and add to the list of trainable layers
-            # checking weights is enough, we do not need biases
-            if hasattr(self.layers[i], "weights"):
-                self.trainable_layers.append(self.layers[i])
-
-        # update loss object with trainable layers
-        self.loss.remember_trainable_layers(self.trainable_layers)
 
 
 
