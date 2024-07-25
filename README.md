@@ -318,6 +318,8 @@ for visualization, I will use matplotlib.
 
 Download MNIST dataset: [Download/Unzip Dataset ](realdataset/DataPreparation.py)
 
+Load, visualize, and turn into numbers existing data: [DataLoading](realdataset/DataLoading.py)
+
 ## Model Evaluation
 **SOON 🔜  ** Methods for evaluating neural network models to ensure they perform well on unseen data.
 
