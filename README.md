@@ -309,7 +309,12 @@ All I'm doing here is to create something like Deep Learning framework, like PyT
 This is model class code, which I think I can call **Deep Learning Framework** [Deep Learning Framework Main class](model/Model.py)
 
 ## A Real Dataset
-**SOON 🔜  ** Practical guide to working with real datasets, including data preparation, loading, preprocessing, and training.
+**Our Framework is ready to test on real dataset**
+
+In this project, I will test my model using the MNIST clothing dataset. 
+I will implement all steps from scratch, including data shuffling and image dimension preparation, 
+without relying on frameworks like PyTorch. For image manipulation, I will use OpenCV, and 
+for visualization, I will use matplotlib.
 
 ## Model Evaluation
 **SOON 🔜  ** Methods for evaluating neural network models to ensure they perform well on unseen data.
