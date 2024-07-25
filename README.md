@@ -316,6 +316,8 @@ I will implement all steps from scratch, including data shuffling and image dime
 without relying on frameworks like PyTorch. For image manipulation, I will use OpenCV, and 
 for visualization, I will use matplotlib.
 
+Download MNIST dataset: [Download/Unzip Dataset ](realdataset/DataPreparation.py)
+
 ## Model Evaluation
 **SOON 🔜  ** Methods for evaluating neural network models to ensure they perform well on unseen data.
 
