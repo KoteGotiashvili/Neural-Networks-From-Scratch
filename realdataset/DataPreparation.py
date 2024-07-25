@@ -16,5 +16,12 @@ def download_dataset():
     if not os.path.exists(FILE):
         print(f'Downloading {FILE}...')
         urllib.request.urlretrieve(UTL, FILE)
+def unzip_dataset():
+    print("unzipping images...")
+    with ZipFile(FILE, 'r') as zip_images:
+        zip_images.extractall(FOLDER)
 
+#download_dataset()
+#unzip_dataset()
+#print("done")
 
