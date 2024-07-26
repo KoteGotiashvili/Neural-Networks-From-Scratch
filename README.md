@@ -320,9 +320,13 @@ Download MNIST dataset: [Download/Unzip Dataset ](realdataset/DataPreparation.py
 
 Load, visualize, and turn into numbers existing data: [DataLoading](realdataset/DataLoading.py)
 
+
 **Data Shuffling:** Our dataset currently consists samples and their target classification. But
 we need to shuffle it in order to avoid overfitting. If we train neural net seperately on data it will be 
 biased towards each class and it will not generalize well.
+
+There is table of data representation:
+![MSEDerivative](images/labels_table.png)
 
 ## Model Evaluation
 **SOON 🔜  ** Methods for evaluating neural network models to ensure they perform well on unseen data.
