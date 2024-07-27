@@ -29,3 +29,7 @@ class Accuracy:
 
         return accuracy
 
+    def new_pass(self):
+        self.accumulated_sum = 0
+        self.accumulated_count = 0
+
