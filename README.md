@@ -328,6 +328,14 @@ biased towards each class and it will not generalize well.
 There is table of data representation:
 ![MSEDerivative](images/labels_table.png)
 
+### Batches
+So far we've trained models by feeding the entire dataset as a single "batch". But in most cases
+AI and ML engineers have a lot of dataset to handle, even terabytes and doing one forward pass 
+will eat memory (: also it is not good practice, when doing batches it sum ups losses and accuracies and helps
+to generalize the model. Common batch sizes range between 32 and 128 samples. Each batch being trained
+is referred to as a **step**. We can calculate number of steps **by dividing the number of samples by the batch size.**
+**Integer division rounds down, thus, if there are any samples left, we will add 1 to form the last batch with the remainder**
+
 ## Model Evaluation
 **SOON 🔜  ** Methods for evaluating neural network models to ensure they perform well on unseen data.
 
