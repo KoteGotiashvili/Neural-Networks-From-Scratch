@@ -59,9 +59,31 @@ class Loss:
         # Calculate mean loss
         data_loss = np.mean(sample_losses)
 
+        # add accumulated sum of losses and sample count
+        self.accumulated_sum += np.sum(sample_losses)
+        self.accumulated_count += len(sample_losses)
+
         #if just data loss return it
         if not include_regularization:
             return data_loss
 
         # Return loss
+        return data_loss, self.regularization_loss()
+
+    def calculate_accumulated(self, *, include_regularization=False):
+        """"
+        Calculates the accumulated loss and regularization loss.
+
+        :param include_regularization: Whether to include regularization loss in the calculation.
+        :return: Tuple containing accumulated loss and regularization loss.
+        """
+
+        #calculate mean loss
+        data_loss = self.accumulated_sum / self.accumulated_count
+
+        # if just data loss return it
+        if not include_regularization:
+            return data_loss
+
+        #return the data and regularization losses
         return data_loss, self.regularization_loss()
