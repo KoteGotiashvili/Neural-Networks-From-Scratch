@@ -339,6 +339,8 @@ is referred to as a **step**. We can calculate number of steps **by dividing the
 Updated loss: [Updated Loss Class](loss/Loss.py)
 
 Updated Accuracy: [Updated Accuracy Class](accuracy/Accuracy.py)
+
+Modify train method for batch suit:[Updated train](model/Model.py)
 ## Model Evaluation
 **SOON 🔜  ** Methods for evaluating neural network models to ensure they perform well on unseen data.
 
