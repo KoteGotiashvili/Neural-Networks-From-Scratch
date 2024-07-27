@@ -336,6 +336,9 @@ to generalize the model. Common batch sizes range between 32 and 128 samples. Ea
 is referred to as a **step**. We can calculate number of steps **by dividing the number of samples by the batch size.**
 **Integer division rounds down, thus, if there are any samples left, we will add 1 to form the last batch with the remainder**
 
+Updated loss: [Updated Loss Class](loss/Loss.html)
+
+
 ## Model Evaluation
 **SOON 🔜  ** Methods for evaluating neural network models to ensure they perform well on unseen data.
 
