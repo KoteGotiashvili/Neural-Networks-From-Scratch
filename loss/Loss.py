@@ -87,3 +87,7 @@ class Loss:
 
         #return the data and regularization losses
         return data_loss, self.regularization_loss()
+
+    def new_pass(self):
+        self.accumulated_sum = 0
+        self.accumulated_count = 0
