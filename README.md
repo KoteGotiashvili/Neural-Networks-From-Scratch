@@ -349,6 +349,10 @@ Now let's train model on real dataset: [Test On Real Dataset](realdataset/TestOn
 **Until now, I have only performed evaluation during training and lacked a separate method 
 for on-demand evaluation, so I will implement an evaluate method.**
 
+We modify Model class, In details I add evaluate method and call this method inside the training.
+
+After modification: [Modified Model](model/Model.py)
+
 
 ## Saving and Loading Models and Their Parameters
 **SOON 🔜  ** Techniques for saving and loading models and their parameters for reuse.
