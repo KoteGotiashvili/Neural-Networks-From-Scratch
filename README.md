@@ -340,7 +340,10 @@ Updated loss: [Updated Loss Class](loss/Loss.py)
 
 Updated Accuracy: [Updated Accuracy Class](accuracy/Accuracy.py)
 
-Modify train method for batch suit:[Updated train](model/Model.py)
+Modify train method for batch suit:[Updated Train](model/Model.py)
+
+Now let's train model on real dataset: [Test On Real Dataset](model/TestOnRealDataset.py)
+
 ## Model Evaluation
 **SOON 🔜  ** Methods for evaluating neural network models to ensure they perform well on unseen data.
 
