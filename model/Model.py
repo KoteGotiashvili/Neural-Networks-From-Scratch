@@ -211,6 +211,9 @@ class Model:
                       f'acc: {validation_accuracy:.3f}, ' +
                       f'loss: {validation_loss:.3f}')
 
+
+    def evaluate(self, X_val, y_val, *, batch_size = None):
+        pass
     def forward(self, X, training):
         """
         We have information about layers(next,prev), now we can perform forward pass
