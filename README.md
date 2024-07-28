@@ -345,7 +345,10 @@ Modify train method for batch suit:[Updated Train](model/Model.py)
 Now let's train model on real dataset: [Test On Real Dataset](realdataset/TestOnRealDataset.py)
 
 ## Model Evaluation
-**SOON 🔜  ** Methods for evaluating neural network models to ensure they perform well on unseen data.
+
+**Until now, I have only performed evaluation during training and lacked a separate method 
+for on-demand evaluation, so I will implement an evaluate method.**
+
 
 ## Saving and Loading Models and Their Parameters
 **SOON 🔜  ** Techniques for saving and loading models and their parameters for reuse.
