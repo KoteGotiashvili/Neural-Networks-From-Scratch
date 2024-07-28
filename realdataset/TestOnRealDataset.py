@@ -35,13 +35,13 @@ model.add(SoftMax())
 # set otpimizer, loss and accuracy objects
 model.set(
     loss=CategoricalCrossEntropy(),
-    optimizer=Adam(),
+    optimizer=Adam(decay=1e-3),
     accuracy=CategoricalAccuracy()
 )
 
 # lets finalize and train
 model.finalize()
 
-model.train(X, y, epochs=10, print_every=10, validation_data=(X_test, y_test), batch_size=128)
+model.train(X, y, epochs=5, print_every=10, validation_data=(X_test, y_test), batch_size=128)
 
 
