@@ -369,6 +369,8 @@ Saving Parameters: We'll extend this further now by saving the parameters into a
 
 Load Parameters: I add load_parameters method in Model class which will read binary file and load model's parameters
 
+Train, Save, And load parameters: [Load Params And Evaluate](realdataset/TestOnRealDataset.py)
+
 ## Prediction / Inference
 **SOON 🔜  ** Guidelines for making predictions and performing inference with trained neural network models.
 
