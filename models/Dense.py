@@ -55,3 +55,7 @@ class Dense:
 
     def get_parameters(self):
         return self.weights, self.biases
+
+    def set_parameters(self, weights, biases):
+        self.weights = weights
+        self.biases = biases
