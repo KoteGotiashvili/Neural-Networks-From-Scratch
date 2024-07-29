@@ -35,14 +35,15 @@ model.add(SoftMax())
 # set otpimizer, loss and accuracy objects
 model.set(
     loss=CategoricalCrossEntropy(),
-    optimizer=Adam(decay=1e-3),
+    optimizer=Adam(),
     accuracy=CategoricalAccuracy()
 )
 
 # lets finalize and train
 model.finalize()
 
-model.train(X, y, epochs=3, print_every=10, validation_data=(X_test, y_test), batch_size=128)
+model.train(X, y, epochs=3, print_every=10, validation_data=(X_test, y_test), batch_size=64)
+model.evaluate(X_test, y_test)
 
 #retrieve and print parameters
 params = model.get_parameters()
