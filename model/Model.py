@@ -303,5 +303,7 @@ class Model:
         # open file in the binary write mode and save parameters to it
         with open(path, 'wb') as file:
             pickle.dump(self.get_parameters(), file)
-
+    def load_parameters(self, path):
+        with open(path, 'rb') as f:
+            self.set_parameters(pickle.load(f))
 
