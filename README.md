@@ -367,6 +367,8 @@ This means instead of training we can set parameters and use them.
 
 Saving Parameters: We'll extend this further now by saving the parameters into a file using built-in module pickle
 
+Load Parameters: I add load_parameters method in Model class which will read binary file and load model's parameters
+
 ## Prediction / Inference
 **SOON 🔜  ** Guidelines for making predictions and performing inference with trained neural network models.
 
