@@ -4,6 +4,7 @@ from sys import exit
 from activation.SoftMax import SoftMax
 from loss.CategoricalCrossEntropy import CategoricalCrossEntropy
 from softmaxandentropy.Activation_Softmax_Loss_CategoricalCrossEntropy import Activation_Softmax_Loss_CategoricalCrossentropy
+import pickle
 class Model:
 
     def __init__(self):
@@ -296,3 +297,11 @@ class Model:
         #iterate over the parameters and layers and update each layers with each set of the parameters
         for parameter_set, layer in zip(parameters, self.trainable_layers):
             layer.set_parameters(*parameter_set)
+
+    def save_parameters(self, path):
+
+        # open file in the binary write mode and save parameters to it
+        with open(path, 'wb') as file:
+            pickle.dump(self.get_parameters(), file)
+
+
