@@ -80,13 +80,15 @@ class Model:
                 self.trainable_layers.append(self.layers[i])
 
         # update loss object with trainable layers
-        self.loss.remember_trainable_layers(self.trainable_layers)
+        if self.loss is not None:
+            self.loss.remember_trainable_layers(self.trainable_layers)
 
         # if output activation is softmax and loss function categorical cross entropy
         # create and object of combined activation and loss function containing faster gradient calculation
         if isinstance(self.layers[-1], SoftMax) and isinstance(self.loss, CategoricalCrossEntropy):
             # create and object of combined activation and loss func
             self.softmax_classifier_output = Activation_Softmax_Loss_CategoricalCrossentropy()
+
 
     def train(self, X, y, *, epochs=1, batch_size=None, print_every=1, validation_data=None):
             # Initialize accuracy object
