@@ -360,6 +360,8 @@ After modification: [Modified Model](model/Model.py)
 dead or exploding neurons, for that reason we are going to save models parameters -> We will iterate over trainable layers
 and put their parameters into list.**
 
+Load model parameters, I add get_parameters method in Dense and Model class.
+
 ## Prediction / Inference
 **SOON 🔜  ** Guidelines for making predictions and performing inference with trained neural network models.
 
