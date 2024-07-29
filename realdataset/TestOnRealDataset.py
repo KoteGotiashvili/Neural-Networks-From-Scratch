@@ -42,11 +42,16 @@ model.set(
 # lets finalize and train
 model.finalize()
 
-model.train(X, y, epochs=3, print_every=10, validation_data=(X_test, y_test), batch_size=64)
-model.evaluate(X_test, y_test)
+#model.train(X, y, epochs=3, print_every=10, validation_data=(X_test, y_test), batch_size=64)
+#model.evaluate(X_test, y_test)
 
 #retrieve and print parameters
-params = model.get_parameters()
-print(params)
+# params = model.get_parameters()
+# print(params)
+
+#save parameters
+#model.save_parameters('fashion_mnist.parms')
+model.load_parameters('./fashion_mnist.parms')
+model.evaluate(X_test, y_test)
 
 
