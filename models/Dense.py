@@ -51,3 +51,7 @@ class Dense:
 
         # Gradient on values
         self.dinputs = np.dot(dvalues, self.weights.T)
+
+
+    def get_parameters(self):
+        return self.weights, self.biases
