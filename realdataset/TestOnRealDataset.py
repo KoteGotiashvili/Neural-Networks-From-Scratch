@@ -42,6 +42,10 @@ model.set(
 # lets finalize and train
 model.finalize()
 
-model.train(X, y, epochs=5, print_every=10, validation_data=(X_test, y_test), batch_size=128)
+model.train(X, y, epochs=3, print_every=10, validation_data=(X_test, y_test), batch_size=128)
+
+#retrieve and print parameters
+params = model.get_parameters()
+print(params)
 
 
