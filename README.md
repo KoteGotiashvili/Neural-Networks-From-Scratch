@@ -355,7 +355,10 @@ After modification: [Modified Model](model/Model.py)
 
 
 ## Saving and Loading Models and Their Parameters
-**SOON 🔜  ** Techniques for saving and loading models and their parameters for reuse.
+
+**There are situations where we'd like to take closer look into model parameters to see if we have
+dead or exploding neurons, for that reason we are going to save models parameters -> We will iterate over trainable layers
+and put their parameters into list.**
 
 ## Prediction / Inference
 **SOON 🔜  ** Guidelines for making predictions and performing inference with trained neural network models.
