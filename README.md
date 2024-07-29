@@ -362,7 +362,8 @@ and put their parameters into list.**
 
 Load model parameters, I add get_parameters method in Dense and Model class.
 
-Setting Parameters: We also want to set parameters, fot that I will add set_parameters method in Dense and Model class:
+Setting Parameters: We also want to set parameters, fot that I will add set_parameters method in Dense and Model class -> 
+This means instead of training we can set parameters and use them.
 
 ## Prediction / Inference
 **SOON 🔜  ** Guidelines for making predictions and performing inference with trained neural network models.
