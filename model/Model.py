@@ -266,3 +266,19 @@ class Model:
         # then call backward on each layer, reversed order passing dinpuds as parameter
         for layer in reversed(self.layers):
             layer.backward(layer.next.dinputs)
+
+
+    def get_parameters(self):
+
+        """
+        Returns all trainable layers parameters in form of list of tuples (weights, biases)
+
+        :return: list of tuples
+        """
+        #list of parameters
+        params = []
+
+        for layer in self.trainable_layers:
+            params.append(layer.get_parameters())
+
+        return params
