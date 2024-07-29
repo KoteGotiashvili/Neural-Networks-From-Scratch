@@ -365,6 +365,8 @@ Load model parameters, I add get_parameters method in Dense and Model class.
 Setting Parameters: We also want to set parameters, fot that I will add set_parameters method in Dense and Model class -> 
 This means instead of training we can set parameters and use them.
 
+Saving Parameters: We'll extend this further now by saving the parameters into a file using built-in module pickle
+
 ## Prediction / Inference
 **SOON 🔜  ** Guidelines for making predictions and performing inference with trained neural network models.
 
