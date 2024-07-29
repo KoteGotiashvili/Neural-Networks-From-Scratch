@@ -279,3 +279,15 @@ class Model:
             params.append(layer.get_parameters())
 
         return params
+
+    def set_parameters(self, parameters):
+
+        """
+        Sets all trainable layers parameters from given list of tuples (weights, biases)
+
+        :param parameters: list of tuples
+        """
+
+        #iterate over the parameters and layers and update each layers with each set of the parameters
+        for parameter_set, layer in zip(parameters, self.trainable_layers):
+            layer.set_parameters(*parameter_set)
