@@ -376,6 +376,8 @@ Now let's save model itself, because the parameters does not have information ab
 
 Saving Model Implemented:  [At the end of the code is save method which saves model](model/Model)
 
+Now we need to load the model, ideally loading model should happen before a model object even exists, for that I'm going to use @staticmethod for load method.
+
 ## Prediction / Inference
 **SOON 🔜  ** Guidelines for making predictions and performing inference with trained neural network models.
 
