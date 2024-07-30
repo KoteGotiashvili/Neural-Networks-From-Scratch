@@ -5,6 +5,7 @@ from activation.SoftMax import SoftMax
 from loss.CategoricalCrossEntropy import CategoricalCrossEntropy
 from softmaxandentropy.Activation_Softmax_Loss_CategoricalCrossEntropy import Activation_Softmax_Loss_CategoricalCrossentropy
 import pickle
+import copy
 class Model:
 
     def __init__(self):
@@ -306,4 +307,13 @@ class Model:
     def load_parameters(self, path):
         with open(path, 'rb') as f:
             self.set_parameters(pickle.load(f))
+
+    def save(self, path):
+        """
+        Saves the entire model with its layers, loss, optimizer, and accuracy objects to a file
+
+        :param path: file path
+        """
+        # make deep copy
+        model = copy.deepcopy(self)
 
