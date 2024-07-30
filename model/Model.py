@@ -333,3 +333,13 @@ class Model:
         # open a file in the binary write mode and save the model
         with open(path, 'wb') as file:
             pickle.dump(model.__dict__, file)
+
+    @staticmethod
+    def load(path):
+
+        #open binary-read mode
+        with open(path, 'rb') as f:
+            model = pickle.load(f)
+
+        # return a model
+        return model
