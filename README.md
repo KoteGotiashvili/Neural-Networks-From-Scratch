@@ -371,6 +371,9 @@ Load Parameters: I add load_parameters method in Model class which will read bin
 
 Train, Save, And load parameters: [Load Params And Evaluate](realdataset/TestOnRealDataset.py)
 
+Now let's save model itself, because the parameters does not have information about model's structure and it does not contain optimization state.
+**We need to save parameters when we need to find out about dead neurons, visualize the model, etc.**
+
 ## Prediction / Inference
 **SOON 🔜  ** Guidelines for making predictions and performing inference with trained neural network models.
 
