@@ -374,9 +374,12 @@ Train, Save, And load parameters: [Load Params And Evaluate](realdataset/TestOnR
 Now let's save model itself, because the parameters does not have information about model's structure and it does not contain optimization state.
 **We need to save parameters when we need to find out about dead neurons, visualize the model, etc.**
 
-Saving Model Implemented:  [At the end of the code is save method which saves model](model/Model)
+Saving Model Implemented:  [Modified Model Class](model/Model)
 
 Now we need to load the model, ideally loading model should happen before a model object even exists, for that I'm going to use @staticmethod for load method.
+
+Saving Model Implemented:  [Modified Model Class](model/Model)
+
 
 ## Prediction / Inference
 **SOON 🔜  ** Guidelines for making predictions and performing inference with trained neural network models.
