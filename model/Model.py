@@ -317,3 +317,19 @@ class Model:
         # make deep copy
         model = copy.deepcopy(self)
 
+        #reset accumulated loss and accuracy
+        model.loss.new_pass()
+        model.accuracy.new_pass()
+
+        # remove data from input layer and gradients from the loss object
+        model.input_layer.__dict__.pop('output', None)
+        model.loss.__dict__.pop('dinputs', None)
+
+        #for each layer remove inputs, outputs, and dinputs properites
+        for layer in model.layers:
+            for property in ['inputs', 'output', 'dinputs','dweights', 'dbiases']:
+                layer.__dict__.pop(property, None)
+
+        # open a file in the binary write mode and save the model
+        with open(path, 'wb') as file:
+            pickle.dump(model.__dict__, file)
