@@ -333,15 +333,21 @@ class Model:
         # open a file in the binary write mode and save the model
         with open(path, 'wb') as file:
             pickle.dump(model.__dict__, file)
+        print("saved")
 
     @staticmethod
-    def load(path):
+    def load(file_path):
 
-        #open binary-read mode
-        with open(path, 'rb') as f:
-            model = pickle.load(f)
+        with open(file_path, 'rb') as file:
+            model_data = pickle.load(file)
 
-        # return a model
+        # Create a new instance of Model
+        model = Model()
+
+        # Load the saved attributes into the model instance
+        for key, value in model_data.items():
+            setattr(model, key, value)
+
         return model
 
     def predict(self, X, *, batch_size=None):
