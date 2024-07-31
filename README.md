@@ -382,8 +382,10 @@ Saving Model Implemented:  [Modified Model Class](model/Model)
 
 
 ## Prediction / Inference
-**SOON 🔜  ** Guidelines for making predictions and performing inference with trained neural network models.
 
+**We spend most of out time focusing on training and testing models, but the whole reason
+we are doing this is that we will pass unseen data to model and it will predict correctly, give us desired outputs.
+Model should be good for production and it should can predict things correctly.**
 
 
 ---
