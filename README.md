@@ -388,6 +388,9 @@ we are doing this is that we will pass unseen data to model and it will predict 
 Model should be good for production and it should can predict things correctly.**
 
 
+**Amost everything is done but, now i want to test this model on unseen dataset, I will upload pictures from Google and preprocess them and
+let's see how our model will work, This is final experiment on this repo, sadly ):**
+
 ---
 
 This repository aims to be a thorough, hands-on guide to neural networks. Happy learning and coding!
