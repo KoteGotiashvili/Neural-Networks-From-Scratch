@@ -54,5 +54,8 @@ X, X_test = data_preprocess.scale_features(X, X_test)
 model = Model.load('fashion_mnist.model')
 model.evaluate(X_test, y_test)
 
+confidences = model.predict(X_test[:5])
+print(confidences)
+
 
 
