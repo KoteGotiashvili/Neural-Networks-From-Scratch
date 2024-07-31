@@ -1,4 +1,5 @@
 .idea
 realdataset/fashion_mnist_images.zip
 realdataset/fashion_mnist_images/
+realdataset/fashion_mnist.model
 
