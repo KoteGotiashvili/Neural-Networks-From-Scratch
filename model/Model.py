@@ -343,3 +343,46 @@ class Model:
 
         # return a model
         return model
+
+    def predict(self, X, *, batch_size=None):
+        """
+        Predicts labels for given data using the model
+
+        :param X: input data
+        :param batch_size: batch size for prediction
+        :return: predicted labels
+        """
+        # Default value if batch size is not being set
+        prediction_steps = 1
+
+        # Calculate number of steps
+        if batch_size is not None:
+            prediction_steps = len(X) // batch_size
+            # Dividing rounds down. If there are some remaining
+            # data but not a full batch, this won't include it
+            # Add `1` to include this not full batch
+            if prediction_steps * batch_size < len(X):
+                prediction_steps += 1
+        # model outputs
+        output = []
+
+        # iterate over steps
+        for step in range(prediction_steps):
+
+            # If batch size is not set -
+            # predict using one step and full dataset
+            if batch_size is None:
+                batch_X = X
+            # Otherwise slice a batch
+            else:
+                batch_X = X[
+                          step * batch_size:(step + 1) * batch_size
+                          ]
+
+            # Perform the forward pass
+            batch_output = self.forward(batch_X, training=False)
+
+            # append batch prediction to the list of predictions
+            output.append(batch_output)
+
+        return np.vstack(output)
