@@ -391,6 +391,9 @@ Model should be good for production and it should can predict things correctly.*
 **Amost everything is done but, now i want to test this model on unseen dataset, I will upload pictures from Google and preprocess them and
 let's see how our model will work, This is final experiment on this repo, sadly ):**
 
+
+#### Finally, I understand Neural Nets In Depth (:
+
 ---
 
 This repository aims to be a thorough, hands-on guide to neural networks. Happy learning and coding!
