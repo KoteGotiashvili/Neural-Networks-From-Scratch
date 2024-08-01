@@ -8,6 +8,10 @@ from activation.SoftMax import SoftMax
 from loss.CategoricalCrossEntropy import CategoricalCrossEntropy
 from optimizers.Adam import Adam
 from accuracy.CategoricalAccuracy import CategoricalAccuracy
+import numpy as np
+import cv2
+import matplotlib.pyplot as plt
+
 data_loader = DataLoading()
 
 data_shuffling = DataShuffling()
@@ -51,11 +55,17 @@ X, X_test = data_preprocess.scale_features(X, X_test)
 
 #save parameters
 #model.save_parameters('fashion_mnist.parms')
-model = Model.load('fashion_mnist.model')
-model.evaluate(X_test, y_test)
+# model = Model.load('fashion_mnist.model')
+# model.evaluate(X_test, y_test)
+#
+# confidences = model.predict(X_test[:5])
+# print(confidences)
 
-confidences = model.predict(X_test[:5])
-print(confidences)
 
+# lets load image from google
+image_data = cv2.imread('tshirt.jpg', cv2.IMREAD_GRAYSCALE)
+image_data = cv2.resize(image_data, (28,28))
+plt.imshow(image_data, cmap='gray')
+plt.show()
 
 
